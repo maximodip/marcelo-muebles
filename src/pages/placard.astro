@@ -1,7 +1,28 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import ImagesGrid from "../components/ImagesGrid.astro";
+import PageTitle from "../components/PageTitle.astro";
 
+const images = [
+  {
+    src: "/images/placard/1.webp",
+  },
+  {
+    src: "/images/placard/2.webp",
+  },
+  {
+    src: "/images/placard/3.webp",
+  },
+  {
+    src: "/images/placard/4.webp",
+  },
+  {
+    src: "/images/placard/5.webp",
+  },
+];
 ---
-<Layout title='Placares'>
-    <h1>Placares</h1>
+
+<Layout title="MAM | Placard">
+  <PageTitle title="Placares" />
+  <ImagesGrid {images} />
 </Layout>

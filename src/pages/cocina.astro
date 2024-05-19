@@ -1,10 +1,46 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ImagesGrid from "../components/ImagesGrid.astro";
+import PageTitle from "../components/PageTitle.astro";
+
+const images = [
+  {
+    src: "/images/cocina/1.webp",
+  },
+  {
+    src: "/images/cocina/12.webp",
+  },
+  {
+    src: "/images/cocina/9.webp",
+  },
+  {
+    src: "/images/cocina/2.webp",
+  },
+  {
+    src: "/images/cocina/4.webp",
+  },
+  {
+    src: "/images/cocina/6.webp",
+  },
+  {
+    src: "/images/cocina/3.webp",
+  },
+  {
+    src: "/images/cocina/7.webp",
+  },
+  {
+    src: "/images/cocina/8.webp",
+  },
+  {
+    src: "/images/cocina/10.webp",
+  },
+  {
+    src: "/images/cocina/11.webp",
+  },
+];
 ---
 
-<Layout title="Cocina">
-  <h1 class="px-4 md:px-0 md:text-5xl text-3xl font-bold">Cocinas</h1>
-  <ImagesGrid />
-  <!-- {cocinaImages.map((cocina) => <ImagesGrid image={cocina.image} />)} -->
+<Layout title="MAM | Cocina">
+  <PageTitle title="Cocinas" />
+  <ImagesGrid {images} />
 </Layout>

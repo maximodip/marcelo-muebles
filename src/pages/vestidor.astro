@@ -1,7 +1,25 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import ImagesGrid from "../components/ImagesGrid.astro";
+import PageTitle from "../components/PageTitle.astro";
 
+const images = [
+  {
+    src: "/images/vestidor/1.webp",
+  },
+  {
+    src: "/images/vestidor/2.webp",
+  },
+  {
+    src: "/images/vestidor/3.webp",
+  },
+  {
+    src: "/images/vestidor/4.webp",
+  },
+];
 ---
-<Layout title='Vestidores'>
-    <h1>Vestidores</h1>
+
+<Layout title="MAM | Vestidor">
+  <PageTitle title="Vestidores" />
+  <ImagesGrid {images} />
 </Layout>

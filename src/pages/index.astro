@@ -2,13 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import BentoGrid from "../components/BentoGrid.astro";
 import SwiperHero from "../components/SwiperHero.astro";
-import Title from "../components/Title.astro";
+import SectionTitle from "../components/SectionTitle.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-  <main class="container mx-auto">
-    <SwiperHero />
-    <Title title="Hechos a medida" subtitle="Hacemos tus ideas realidad" />
-    <BentoGrid />
-  </main>
+<Layout title="MAM | Inicio">
+  <BentoGrid />
+  <SectionTitle title="Hecho a medida" subtitle="Hacemos tus ideas realidad" />
+  <SwiperHero />
+  <SectionTitle title="Preguntas Frecuentes" subtitle="Sacate tus dudas" />
 </Layout>

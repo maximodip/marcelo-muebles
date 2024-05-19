@@ -1,23 +1,23 @@
 export const cocinaImages = [
   {
-    image: "/images/cocina/1.webp",
+    src: "/images/cocina/1.webp",
   },
   {
-    image: "/images/cocina/2.jpg",
+    src: "/images/cocina/2.webp",
   },
   {
-    image: "/images/cocina/3.jpg",
+    src: "/images/cocina/3.webp",
   },
   {
-    image: "/images/cocina/4.jpg",
+    src: "/images/cocina/4.webp",
   },
   {
-    image: "/images/cocina/5.jpg",
+    src: "/images/cocina/5.webp",
   },
   {
-    image: "/images/cocina/6.jpg",
+    src: "/images/cocina/6.webp",
   },
   {
-    image: "/images/cocina/7.jpg",
+    src: "/images/cocina/7.webp",
   },
 ];

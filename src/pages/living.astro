@@ -1,7 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ImagesGrid from "../components/ImagesGrid.astro";
+import PageTitle from "../components/PageTitle.astro";
+
+const images = [
+  {
+    src: "/images/living/1.webp",
+  },
+  {
+    src: "/images/living/2.webp",
+  },
+  {
+    src: "/images/living/5.webp",
+  },
+  {
+    src: "/images/living/3.webp",
+  },
+  {
+    src: "/images/living/4.webp",
+  },
+];
 ---
 
-<Layout title="Livings">
-  <h1>Livings</h1>
+<Layout title="MAM | Living">
+  <PageTitle title="Sala de estar" />
+  <ImagesGrid {images} />
 </Layout>

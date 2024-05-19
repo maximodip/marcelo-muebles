@@ -2,18 +2,19 @@
 import Menu from "../components/icons/Menu.astro";
 ---
 
-<nav class="h-16 my-8 container mx-auto px-2 md:px-0">
+<nav class="h-16 max-sm:mt-4 sm:mt-8 sm:mb-4 container mx-auto px-2 md:px-0">
   <div class="flex items-center justify-between h-full">
     <div class="sm:flex items-center gap-x-4 text-xl hidden">
-      <a href="/" class="text-2xl hover:underline">Antes/Despues</a>
+      <a href="/antes-despues" class="text-2xl hover:underline">Antes/Después</a
+      >
     </div>
     <a href="/" class="hidden sm:block">
-      <img src="/logo.png" alt="Logo" height="350" width="250" />
+      <img src="/logo.webp" alt="Logo" height="350" width="250" />
     </a>
     <a href="/" class="block sm:hidden">
-      <img src="/logoleft.png" alt="Logo" height="350" width="250" />
+      <img src="/logoleft.webp" alt="Logo" height="350" width="250" />
     </a>
-    <div class="sm:flex flex-col gap-2 hidden">
+    <div class="sm:flex flex-col gap-2 hidden text-right">
       <a
         class="hover:underline font-medium text-xl"
         href="https://api.whatsapp.com/send?phone=3816247866&text=Hola! Ví tus muebles y me gustaría hacer una consulta."
@@ -25,8 +26,54 @@ import Menu from "../components/icons/Menu.astro";
         target="_blank">bollo_ap@hotmail.com</a
       >
     </div>
-    <button class="sm:hidden size-8">
+    <button class="sm:hidden size-8" id="menuBtn">
       <Menu />
     </button>
+    <div
+      class="sm:hidden absolute top-24 left-0 w-full bg-white border border-gray-300 z-10"
+      id="mobileMenu"
+    >
+      <div class="flex justify-around">
+        <a
+          href="/antes-despues"
+          class="block py-2 px-4 text-gray-800 hover:bg-gray-300"
+          >Antes/Después</a
+        >
+        <a
+          href="#swiperHero"
+          class="block py-2 px-4 text-gray-800 hover:bg-gray-300"
+          >Plano/Realidad</a
+        >
+      </div>
+    </div>
   </div>
 </nav>
+
+<style>
+  #mobileMenu {
+    display: none;
+  }
+
+  #mobileMenu.active {
+    display: block;
+  }
+</style>
+
+<script>
+  document.getElementById("menuBtn").addEventListener("click", function () {
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("active");
+
+    const content = document.getElementById("bentoGrid");
+    content.classList.toggle("menu-open");
+  });
+
+  // Agregar controlador de eventos para cerrar el menú cuando se hace clic en un enlace dentro del menú desplegable
+  const menuLinks = document.querySelectorAll("#mobileMenu a");
+  menuLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      const menu = document.getElementById("mobileMenu");
+      menu.classList.remove("active");
+    });
+  });
+</script>

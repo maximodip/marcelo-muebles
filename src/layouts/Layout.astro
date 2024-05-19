@@ -24,14 +24,31 @@ const { title } = Astro.props;
   </head>
   <body class="mx-auto max-w-screen-xl">
     <Navbar />
-    <slot />
+    <main class="container mx-auto">
+      <slot />
+    </main>
   </body>
 </html>
 
 <style is:global>
   body {
     font-family: "Lateef", serif;
+
+    /* background: url("/Wood_background.webp") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; */
+
+    background-color: #ddd;
+  }
+
+  html {
     scroll-behavior: smooth;
-    background-color: #ddd
+  }
+
+  .menu-open {
+    margin-top: 50px; /* Ajusta la cantidad de espacio que quieres que el contenido se mueva hacia abajo */
+    transition: margin-top 0.3s ease; /* Agrega una transición suave al movimiento */
   }
 </style>
