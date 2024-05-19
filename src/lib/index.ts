@@ -1,6 +1,6 @@
 export const cocinaImages = [
   {
-    image: "/images/cocina/1.jpg",
+    image: "/images/cocina/1.webp",
   },
   {
     image: "/images/cocina/2.jpg",
