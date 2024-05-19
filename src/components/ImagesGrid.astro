@@ -1,0 +1,32 @@
+---
+// interface Props {
+//   image: string;
+// }
+
+// const { image } = Astro.props;
+
+import { cocinaImages } from "../lib/index";
+---
+
+<section class="container mx-auto px-4 md:px-0 mb-12">
+  <div class="images">
+    {
+      cocinaImages.map((cocina) => (
+        <img
+          src={cocina.image}
+          class="w-full h-auto rounded-lg shadow-md"
+          decoding="async"
+          loading="lazy"
+        />
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 3em;
+  }
+</style>
