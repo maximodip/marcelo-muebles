@@ -2,12 +2,13 @@
 interface Props {
   title: string;
   subtitle: string;
+  id?: string;
 }
 
-const { title, subtitle } = Astro.props;
+const { title, subtitle, id } = Astro.props;
 ---
 
-<section class="my-12 text-center">
+<section class="my-12 text-center" id={id}>
   <h2 class="md:text-5xl text-3xl font-bold uppercase">{title}</h2>
-  <p class="md:text-3xl text-2xl opacity-75">{subtitle}</p>
+  <p class="md:text-3xl text-2xl opacity-75 text-[#4B3621]">{subtitle}</p>
 </section>
