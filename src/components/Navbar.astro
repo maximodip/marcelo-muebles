@@ -26,25 +26,29 @@ import Menu from "../components/icons/Menu.astro";
         target="_blank">bollo_ap@hotmail.com</a
       >
     </div>
-    <button class="sm:hidden size-8" id="menuBtn" name="menu-button">
+    <button
+      class="sm:hidden size-8"
+      id="menuBtn"
+      name="open-menu"
+      title="Open Menu"
+    >
       <Menu />
     </button>
-    <div
-      class="sm:hidden absolute top-24 left-0 w-full bg-white border border-gray-300 z-10"
-      id="mobileMenu"
-    >
-      <div class="flex justify-around">
-        <a
-          href="/antes-despues"
-          class="block py-2 px-4 text-gray-800 hover:bg-gray-300"
-          >Antes/Después</a
-        >
-        <a
-          href="#swiperHero"
-          class="block py-2 px-4 text-gray-800 hover:bg-gray-300"
-          >Plano/Realidad</a
-        >
-      </div>
+  </div>
+  <div
+    class="sm:hidden absolute top-24 left-0 w-full bg-white border border-gray-300 z-10"
+    id="mobileMenu"
+  >
+    <div class="flex justify-around">
+      <a
+        href="/antes-despues"
+        class="block py-2 px-4 text-gray-800 hover:bg-gray-300">Antes/Después</a
+      >
+      <a
+        href="#swiperHero"
+        class="block py-2 px-4 text-gray-800 hover:bg-gray-300"
+        >Plano/Realidad</a
+      >
     </div>
   </div>
 </nav>
