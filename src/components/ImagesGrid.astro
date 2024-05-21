@@ -3,23 +3,15 @@ const { images } = Astro.props;
 ---
 
 <section class="container mx-auto mb-4">
-  <div class="images p-4 sm:p-0 overflow-hidden">
+  <div class="mx-auto grid grid-flow-dense grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 p-4 sm:p-0 animate-fade-in animate-duration-normal">
     {
       images.map((image) => (
-        <img
-          src={image.src}
-          class="h-auto rounded-lg shadow-md object-cover"
-          loading="lazy"
-        />
+          <img
+            src={image.src}
+            class="h-auto rounded-lg shadow-md object-cover"
+            loading="lazy"
+          />
       ))
     }
   </div>
 </section>
-
-<style>
-  .images {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 1em;
-  }
-</style>
