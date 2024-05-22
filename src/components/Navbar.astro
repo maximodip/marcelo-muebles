@@ -1,5 +1,6 @@
 ---
 import Menu from "../components/icons/Menu.astro";
+import { Image } from 'astro:assets';
 ---
 
 <nav class="h-16 max-sm:mt-4 sm:mt-8 sm:mb-4 container mx-auto px-2 md:px-0">
@@ -9,10 +10,10 @@ import Menu from "../components/icons/Menu.astro";
       >
     </div>
     <a href="/" class="hidden sm:block">
-      <img src="/logo.webp" alt="Logo" height="350" width="250" />
+      <Image src="/logo.webp" alt="Logo" height="350" width="250" />
     </a>
     <a href="/" class="block sm:hidden">
-      <img src="/logoleft.webp" alt="Logo" height="350" width="250" />
+      <Image src="/logoleft.webp" alt="Logo" height="350" width="250" />
     </a>
     <div class="sm:flex flex-col gap-2 hidden text-right">
       <a
