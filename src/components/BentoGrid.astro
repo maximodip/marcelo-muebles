@@ -1,3 +1,7 @@
+---
+import { Image } from "astro:assets";
+---
+
 <section class="mb-12 px-2 md:px-0" id="first-content">
   <div class="py-4">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 h-full">
@@ -9,8 +13,10 @@
           class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow"
           transition:name="living"
         >
-          <img
+          <Image
             src="/muebletele.webp"
+            width="720"
+            height="960"
             alt=""
             class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
           />
@@ -30,7 +36,9 @@
           href="/cocina"
           class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 mb-4"
         >
-          <img
+          <Image
+            width="916"
+            height="960"
             src="/cocinabento.webp"
             alt=""
             class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
@@ -50,7 +58,9 @@
             href="/vanitory"
             class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40"
           >
-            <img
+            <Image
+              width="1080"
+              height="1440"
               src="/vanitory.webp"
               alt=""
               class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
@@ -69,7 +79,9 @@
             href="/placard"
             class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40"
           >
-            <img
+            <Image
+              width="1200"
+              height="1600"
               src="/placard.webp"
               alt=""
               class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
@@ -93,7 +105,9 @@
           href="/vestidor"
           class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow"
         >
-          <img
+          <Image
+            width="1080"
+            height="1350"
             src="/vestidor.webp"
             alt=""
             class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
