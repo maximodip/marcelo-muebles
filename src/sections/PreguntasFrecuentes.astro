@@ -1,0 +1,47 @@
+---
+import Accordion from "../components/Accordion.astro"
+
+const data = [
+  {
+    dataTarget: "content-1",
+    contentId: "content-1",
+    question: "¿Qué tipo de madera usamos?",
+    answer: "1"
+  },
+  {
+    dataTarget: "content-2",
+    contentId: "content-2",
+    question: "¿Las imágenes son de trabajos reales?",
+    answer: "2"
+  },
+  {
+    dataTarget: "content-3",
+    contentId: "content-3",
+    question: "¿Debo tratar o proteger la madera con algún tipo de sellador, barniz o pintura?",
+    answer: "3"
+  },
+  {
+    dataTarget: "content-4",
+    contentId: "content-4",
+    question: "¿Cuánto costarán los materiales necesarios para construir el mueble?",
+    answer: "4"
+  },
+  {
+    dataTarget: "content-5",
+    contentId: "content-5",
+    question: "¿Es cómodo y funcional para el uso diario?",
+    answer: "5"
+  }
+]
+---
+
+<div class="w-full max-w-2xl p-4 mx-auto bg-white rounded-lg text-2xl">
+  {
+    data.map((item) => (
+      <div class="py-2">
+        <Accordion dataTarget={`#${item.dataTarget}`} contentId={item.contentId}  question={item.question} answer={item.answer} />
+      </div>
+    ))
+  }
+</div>
+

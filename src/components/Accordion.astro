@@ -1,48 +1,22 @@
 ---
 interface Props {
-
+  dataTarget: string;
+  contentId: string;
+  question: string;
+  answer: string;
 }
+
+const {dataTarget, question, answer, contentId} = Astro.props
 ---
 
 
-<div class="w-full max-w-2xl p-4 mx-auto bg-white rounded-lg text-2xl">
-  <div class="space-y-2">
-    <!-- Accordion Item 1 -->
-    <div class="border border-gray-200 rounded-md">
-      <button
-        class="accordion-header w-full p-4 text-left flex justify-between items-center"
-        data-target="#content-1"
-      >
-        <span>¿Qué tipo de madera usamos?</span>
-        <svg
-          class="accordion-icon w-6 h-6 transform transition-transform"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M19 9l-7 7-7-7"></path>
-        </svg>
-      </button>
-      <div
-        id="content-1"
-        class="accordion-content hidden p-4 border-t border-gray-200"
-      >
-        <p class="text-[#4B3621]">Respuesta 1</p>
-      </div>
-    </div>
 
-    <!-- Accordion Item 2 -->
     <div class="border border-gray-200 rounded-md">
       <button
         class="accordion-header w-full p-4 text-left flex justify-between items-center"
-        data-target="#content-2"
+        data-target={dataTarget}
       >
-        <span>¿Las imágenes son de trabajos reales?</span>
+        <span>{question}</span>
         <svg
           class="accordion-icon w-6 h-6 transform transition-transform"
           xmlns="http://www.w3.org/2000/svg"
@@ -58,102 +32,12 @@ interface Props {
         </svg>
       </button>
       <div
-        id="content-2"
+        id={contentId}
         class="accordion-content hidden p-4 border-t border-gray-200"
       >
-        <p class="text-[#4B3621]">Respuesta 2</p>
+        <p class="text-[#4B3621]">{answer}</p>
       </div>
     </div>
-
-    <!-- Accordion Item 3 -->
-    <div class="border border-gray-200 rounded-md">
-      <button
-        class="accordion-header w-full p-4 text-left flex justify-between items-center"
-        data-target="#content-3"
-      >
-        <span
-          >¿Debo tratar o proteger la madera con algún tipo de sellador, barniz
-          o pintura?</span
-        >
-        <svg
-          class="accordion-icon w-6 h-6 transform transition-transform"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M19 9l-7 7-7-7"></path>
-        </svg>
-      </button>
-      <div
-        id="content-3"
-        class="accordion-content hidden p-4 border-t border-gray-200"
-      >
-        <p class="text-[#4B3621]">Respuesta 3</p>
-      </div>
-    </div>
-    <div class="border border-gray-200 rounded-md">
-      <button
-        class="accordion-header w-full p-4 text-left flex justify-between items-center"
-        data-target="#content-4"
-      >
-        <span
-          >¿Cuánto costarán los materiales necesarios para construir el mueble?</span
-        >
-        <svg
-          class="accordion-icon w-6 h-6 transform transition-transform"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M19 9l-7 7-7-7"></path>
-        </svg>
-      </button>
-      <div
-        id="content-4"
-        class="accordion-content hidden p-4 border-t border-gray-200"
-      >
-        <p class="text-[#4B3621]">Respuesta 4</p>
-      </div>
-    </div>
-    <div class="border border-gray-200 rounded-md">
-      <button
-        class="accordion-header w-full p-4 text-left flex justify-between items-center"
-        data-target="#content-5"
-      >
-        <span>¿Es cómodo y funcional para el uso diario?</span>
-        <svg
-          class="accordion-icon w-6 h-6 transform transition-transform"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M19 9l-7 7-7-7"></path>
-        </svg>
-      </button>
-      <div
-        id="content-5"
-        class="accordion-content hidden p-4 border-t border-gray-200"
-      >
-        <p class="text-[#4B3621]">Respuesta 5</p>
-      </div>
-    </div>
-  </div>
-</div>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
