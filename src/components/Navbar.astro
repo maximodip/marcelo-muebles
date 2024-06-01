@@ -1,31 +1,38 @@
 ---
 import Menu from "../components/icons/Menu.astro";
-import { Image } from 'astro:assets';
+import Instagram from "../components/icons/Instagram.astro";
+import { Image } from "astro:assets";
 ---
 
-<nav class="h-16 max-sm:mt-4 sm:mt-8 sm:mb-4 container mx-auto px-2 md:px-0">
+<header
+  class="h-16 max-sm:mt-4 sm:mt-12 sm:mb-4 container mx-auto px-2 md:px-0 bg-white"
+>
   <div class="flex items-center justify-between h-full">
-    <div class="sm:flex items-center gap-x-4 text-xl hidden">
-      <a href="/#antes-despues" class="text-2xl hover:underline">Antes/Después</a
-      >
-    </div>
-    <a href="/" class="hidden sm:block">
-      <Image src="/logo.webp" alt="Logo" height="350" width="250" />
-    </a>
-    <a href="/" class="block sm:hidden">
+    <a href="/" class="block">
       <Image src="/logoleft.webp" alt="Logo" height="350" width="250" />
     </a>
-    <div class="sm:flex flex-col gap-2 hidden text-right">
+    <nav class="sm:flex items-center gap-x-4 hidden">
       <a
-        class="hover:underline font-medium text-xl"
-        href="https://api.whatsapp.com/send?phone=3816247866&text=Hola! Ví tus muebles y me gustaría hacer una consulta."
-        target="_blank">+54 9 381 624-7866</a
+        href="/#swiperHero"
+        class="text-lg lg:text-2xl hover:underline"
+        >Plano/Realidad</a
       >
+      <a href="/#preguntas-frecuentes" class="text-lg lg:text-2xl hover:underline"
+        >Preguntas frecuentes</a
+      >
+      <a href="/#antes-despues" class="text-lg lg:text-2xl hover:underline"
+        >Antes/Después</a
+      >
+    </nav>
+    <div class="max-sm:hidden flex items-center text-lg gap-x-4">
+      <span class="lg:block hidden">Tucumán, Argentina</span>
       <a
-        class="hover:underline font-medium text-xl"
-        href="mailto:bollo_ap@hotmail.com"
-        target="_blank">bollo_ap@hotmail.com</a
+        class="hover:opacity-70"
+        href="https://instagram.com/marceloapariciomuebles"
+        target="_blank"
       >
+        <Instagram width="32" height="32" />
+      </a>
     </div>
     <button
       class="sm:hidden size-8"
@@ -42,17 +49,21 @@ import { Image } from 'astro:assets';
   >
     <div class="flex justify-around">
       <a
-        href="/antes-despues"
-        class="block py-2 px-4 text-gray-800 hover:bg-gray-300">Antes/Después</a
-      >
-      <a
-        href="/#swiperHero"
+        href="#swiperHero"
         class="block py-2 px-4 text-gray-800 hover:bg-gray-300"
         >Plano/Realidad</a
       >
+      <a
+        href="#preguntas-frecuentes"
+        class="block py-2 px-4 text-gray-800 hover:bg-gray-300">Preguntas frecuentes</a
+      >
+      <a
+        href="#antes-despues"
+        class="block py-2 px-4 text-gray-800 hover:bg-gray-300">Antes/Después</a
+      >
     </div>
   </div>
-</nav>
+</header>
 
 <style>
   #mobileMenu {
