@@ -9,6 +9,7 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../sections/Footer.astro";
 import GoUpButton from "../components/GoUpButton.astro";
 import WhatsappButton from "../components/WhatsappButton.astro";
+import FixedInfo from "../components/FixedInfo.astro";
 
 interface Props {
   title: string;
@@ -30,7 +31,8 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="mx-auto max-w-screen-xl">
+  <body>
+    <FixedInfo />
     <div
       class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"
     >
