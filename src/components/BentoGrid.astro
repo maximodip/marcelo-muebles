@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 ---
 
-<section class="md:my-36 px-2 md:px-0" id="first-content">
+<section class="md:my-36 px-2 md:px-0 animate-fade-in" id="first-content">
   <div class="py-4">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 h-full">
       <div
@@ -10,6 +10,7 @@ import { Image } from "astro:assets";
       >
         <a
           href="/living"
+          data-astro-prefetch
           class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow"
         >
           <Image

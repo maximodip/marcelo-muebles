@@ -1,39 +1,53 @@
 ---
-import { Image } from "astro:assets"
+import { Image } from "astro:assets";
 
 const imagesBefore = [
-  {src: "/images/before/1.webp"},
-  {src: "/images/before/2.webp"},
-  {src: "/images/before/3.webp"}
-]
+  { src: "/images/before/1.webp" },
+  { src: "/images/before/2.webp" },
+  { src: "/images/before/3.webp" },
+];
 
 const imagesAfter = [
-  {src: "/images/after/1.webp"},
-  {src: "/images/after/2.webp"},
-  {src: "/images/after/3.webp"}
-]
+  { src: "/images/after/1.webp" },
+  { src: "/images/after/2.webp" },
+  { src: "/images/after/3.webp" },
+];
 ---
 
 <section class="flex justify-center items-center">
-  <div class="shadow-sm rounded-lg overflow-hidden flex flex-col md:flex-row w-full max-w-5xl">
+  <div
+    class="shadow-sm rounded-lg overflow-hidden flex flex-col md:flex-row w-full max-w-5xl"
+  >
     <div class="flex-1 p-2 text-center">
-        <h2 class="text-2xl font-bold mb-4">Imágenes de Antes</h2>
-        {
-          imagesBefore.map((image) => (
-            <Image src={image.src} alt="Imagen antes" class="mb-4 mx-auto rounded-lg border-2" width="350" height="350"/>
-          ))          
-        }
+      <h2 class="text-2xl font-bold mb-4">Imágenes de Antes</h2>
+      {
+        imagesBefore.map((image) => (
+          <Image
+            src={image.src}
+            alt="Imagen antes"
+            class="mb-4 mx-auto rounded-lg border-2"
+            width="350"
+            height="350"
+          />
+        ))
+      }
     </div>
     <div class="flex-1 p-2 text-center flex items-center justify-center">
-        <h2 class="text-3xl font-bold text-[#4B3621]">VS</h2>
+      <h2 class="text-3xl font-bold text-[#4B3621]">VS</h2>
     </div>
     <div class="flex-1 p-2 text-center">
-        <h2 class="text-2xl font-bold mb-4">Imágenes de Ahora</h2>
-        {
-          imagesAfter.map((image) => (
-            <Image src={image.src} alt="Imagen antes" class="mb-4 mx-auto rounded-lg border-2" width="350" height="350"/>
-          ))          
-        }
+      <h2 class="text-2xl font-bold mb-4">Imágenes de Ahora</h2>
+      {
+        imagesAfter.map((image) => (
+          <Image
+            src={image.src}
+            alt="Imagen antes"
+            class="mb-4 mx-auto rounded-lg border-2"
+            width="350"
+            height="350"
+          />
+        ))
+      }
     </div>
-</div>
+  </div>
 </section>
