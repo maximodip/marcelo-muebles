@@ -1,47 +1,53 @@
 ---
-import Accordion from "../components/Accordion.astro"
+import Accordion from "../components/Accordion.astro";
 
 const data = [
   {
     dataTarget: "content-1",
     contentId: "content-1",
     question: "¿Qué materiales utilizas para la fabricación de los muebles?",
-    answer: "Usamos tableros de melaminas sobre MDF de las mejores marcas."
+    answer: "Usamos tableros de melaminas sobre MDF de las mejores marcas.",
   },
   {
     dataTarget: "content-2",
     contentId: "content-2",
     question: "¿Las imágenes son de trabajos reales?",
-    answer: "Si, todas las imágenes que ves en nuestra página son de trabajos reales."
+    answer:
+      "Si, todas las imágenes que ves en nuestra página son de trabajos reales.",
   },
   {
     dataTarget: "content-3",
     contentId: "content-3",
     question: "¿Cuánto tiempo tarda en fabricar un mueble a medida?",
-    answer: "Un proceso de 15 días desde que se compra el material hasta la entrega."
+    answer:
+      "Un proceso de 15 días desde que se compra el material hasta la entrega.",
   },
   {
     dataTarget: "content-4",
     contentId: "content-4",
     question: "¿Ofreces servicios de entrega e instalación?",
-    answer: "Si, entrega e instalación sin cargo para todo Tucumán."
+    answer: "Si, entrega e instalación sin cargo para todo Tucumán.",
   },
   {
     dataTarget: "content-5",
     contentId: "content-5",
     question: "¿Ofreces diferentes opciones de personalización?",
-    answer: "Si, tenemos diferentes colores y texturas a elección."
-  }
-]
+    answer: "Si, tenemos diferentes colores y texturas a elección.",
+  },
+];
 ---
 
 <div class="w-full max-w-2xl p-4 mx-auto bg-white rounded-lg text-2xl">
   {
     data.map((item) => (
       <div class="py-2">
-        <Accordion dataTarget={`#${item.dataTarget}`} contentId={item.contentId}  question={item.question} answer={item.answer} />
+        <Accordion
+          dataTarget={`#${item.dataTarget}`}
+          contentId={item.contentId}
+          question={item.question}
+          answer={item.answer}
+        />
       </div>
     ))
   }
 </div>
-

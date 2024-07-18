@@ -44,9 +44,12 @@ const { dataTarget, question, answer, contentId } = Astro.props;
     headers.forEach((header) => {
       header.addEventListener("click", () => {
         const content = document.querySelector(
-          header.getAttribute("data-target")
+          header.getAttribute("data-target"),
         );
         const icon = header.querySelector(".accordion-icon");
+
+        // Check if the clicked accordion is already open
+        const isOpen = !content.classList.contains("hidden");
 
         // Close all accordions
         document
@@ -56,8 +59,8 @@ const { dataTarget, question, answer, contentId } = Astro.props;
           .querySelectorAll(".accordion-icon")
           .forEach((i) => i.classList.remove("rotate-180"));
 
-        // Toggle the clicked accordion
-        if (content.classList.contains("hidden")) {
+        // Toggle the clicked accordion if it was not open
+        if (!isOpen) {
           content.classList.remove("hidden");
           icon.classList.add("rotate-180");
         }
