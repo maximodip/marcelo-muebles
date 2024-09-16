@@ -1,8 +1,43 @@
 ---
 import PageTitle from "../components/PageTitle.astro";
 import Layout from "../layouts/Layout.astro";
+import ImagesGrid from "../components/ImagesGrid.astro";
+
+const images = [
+  {
+    src: "/images/vanitory/1.webp",
+  },
+  {
+    src: "/images/vanitory/2.webp",
+  },
+  {
+    src: "/images/vanitory/5.webp",
+  },
+  {
+    src: "/images/vanitory/3.webp",
+  },
+  {
+    src: "/images/vanitory/4.webp",
+  },
+  {
+    src: "/images/vanitory/5.webp",
+  },
+  {
+    src: "/images/vanitory/6.webp",
+  },
+  {
+    src: "/images/vanitory/7.webp",
+  },
+  {
+    src: "/images/vanitory/8.webp",
+  },
+  {
+    src: "/images/vanitory/9.webp",
+  },
+];
 ---
 
 <Layout title="Vanitory - Marcelo Aparicio Muebles">
   <PageTitle title="Vanitories" />
+  <ImagesGrid {images} />
 </Layout>
