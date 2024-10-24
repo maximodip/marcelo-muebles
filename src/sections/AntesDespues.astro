@@ -1,12 +1,10 @@
 ---
-import { Image } from "astro:assets";
-
+// src/components/ImageComparison.astro
 const imagesBefore = [
   { src: "/images/before/1.webp" },
   { src: "/images/before/2.webp" },
   { src: "/images/before/3.webp" },
 ];
-
 const imagesAfter = [
   { src: "/images/after/1.webp" },
   { src: "/images/after/2.webp" },
@@ -14,40 +12,114 @@ const imagesAfter = [
 ];
 ---
 
-<section class="flex justify-center items-center">
-  <div
-    class="shadow-sm rounded-lg overflow-hidden flex flex-col md:flex-row w-full max-w-5xl"
-  >
-    <div class="flex-1 p-2 text-center">
-      <h2 class="text-2xl font-bold mb-4">Imágenes de Antes</h2>
-      {
-        imagesBefore.map((image) => (
-          <Image
-            src={image.src}
-            alt="Imagen antes"
-            class="mb-4 mx-auto rounded-lg border-2"
-            width="350"
-            height="350"
+<section class="grid gap-8 p-4 lg:grid-cols-3 md:grid-cols-2">
+  {
+    imagesBefore.map((_, index) => (
+      <div class="image-comparison relative w-full h-[500px] overflow-hidden rounded-lg">
+        <div class="after absolute inset-0">
+          <img
+            src={imagesAfter[index].src}
+            alt={`After restoration ${index + 1}`}
+            class="w-full h-full object-contain"
           />
-        ))
-      }
-    </div>
-    <div class="flex-1 p-2 text-center flex items-center justify-center">
-      <h2 class="text-3xl font-bold text-[#4B3621]">VS</h2>
-    </div>
-    <div class="flex-1 p-2 text-center">
-      <h2 class="text-2xl font-bold mb-4">Imágenes de Ahora</h2>
-      {
-        imagesAfter.map((image) => (
-          <Image
-            src={image.src}
-            alt="Imagen antes"
-            class="mb-4 mx-auto rounded-lg border-2"
-            width="350"
-            height="350"
+        </div>
+        <div class="before absolute inset-0">
+          <img
+            src={imagesBefore[index].src}
+            alt={`Before restoration ${index + 1}`}
+            class="w-full h-full object-contain"
           />
-        ))
-      }
-    </div>
-  </div>
+          <div class="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+            Antes
+          </div>
+        </div>
+        <div class="slider absolute inset-y-0 w-1 bg-white cursor-ew-resize left-1/2 -translate-x-1/2">
+          <div class="handle absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center">
+            <div class="arrows text-gray-800 text-xs">⇄</div>
+          </div>
+        </div>
+        <div class="absolute bottom-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+          Después
+        </div>
+      </div>
+    ))
+  }
 </section>
+
+<style>
+  .before {
+    clip-path: inset(0 50% 0 0);
+  }
+
+  .slider {
+    touch-action: none;
+  }
+
+  .image-comparison.dragging {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+</style>
+
+<script>
+  function initImageComparison() {
+    const containers = document.querySelectorAll(".image-comparison");
+
+    containers.forEach((container) => {
+      const slider = container.querySelector(".slider");
+      const beforeDiv = container.querySelector(".before");
+      let isResizing = false;
+
+      function updateSliderPosition(clientX) {
+        const rect = container.getBoundingClientRect();
+        const x = clientX - rect.left;
+        const percent = Math.min(Math.max((x / rect.width) * 100, 0), 100);
+
+        if (beforeDiv instanceof HTMLElement && slider instanceof HTMLElement) {
+          beforeDiv.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+          slider.style.left = `${percent}%`;
+        }
+      }
+
+      // Mouse events
+      slider?.addEventListener("mousedown", (e) => {
+        isResizing = true;
+        container.classList.add("dragging");
+      });
+
+      window.addEventListener("mousemove", (e) => {
+        if (!isResizing) return;
+        e.preventDefault();
+        updateSliderPosition(e.clientX);
+      });
+
+      // Touch events
+      slider?.addEventListener("touchstart", (e) => {
+        isResizing = true;
+        container.classList.add("dragging");
+      });
+
+      slider?.addEventListener(
+        "touchmove",
+        (e) => {
+          if (!isResizing) return;
+          e.preventDefault();
+          updateSliderPosition((e as TouchEvent).touches[0].clientX);
+        },
+        { passive: false }
+      );
+
+      // End events
+      const endDragging = () => {
+        isResizing = false;
+        container.classList.remove("dragging");
+      };
+
+      window.addEventListener("mouseup", endDragging);
+      window.addEventListener("touchend", endDragging);
+    });
+  }
+
+  // Initialize when the DOM is loaded
+  document.addEventListener("DOMContentLoaded", initImageComparison);
+</script>
